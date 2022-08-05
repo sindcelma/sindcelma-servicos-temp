@@ -1,0 +1,11 @@
+{
+    "default":{
+        "dbname":"sindcelma",
+        "driver":"mysql",
+        "host":"172.17.0.2",
+        "charset": "utf8mb4",
+        "user": "root",
+        "pass":"MTcxNj@172039",
+        "port":"3306"
+    }
+}
