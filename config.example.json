@@ -1,4 +1,6 @@
 {
     "production":false,
-    "salt":""
+    "salt":"",
+    "url_prod":"",
+    "url_dev":""
 }

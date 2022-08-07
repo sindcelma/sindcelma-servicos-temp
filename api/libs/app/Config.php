@@ -11,7 +11,9 @@ class Config {
     private function __construct(){
         $conf = json_decode(file_get_contents("../config.json"), true);
         $this->data = $conf;
-        $database =  $conf['production'] ? "../database.prod.json" : "../database.local.json"; 
+        $isInProduction = $conf['production'];
+        $database = $isInProduction ? "../database.prod.json" : "../database.local.json"; 
+        $this->url = $isInProduction ? $conf['url_prod'] : $conf['url_dev'];
         $this->database = json_decode(file_get_contents($database), true);
     }
 
@@ -35,14 +37,14 @@ class Config {
         return $conf;
     }
 
-    public static function url(){
+    public static function url($uri = ""){
 
-        return self::instance()->url;
+        return self::instance()->url.$uri;
     }
 
     public static function is_in_production(){
 
-        return self::instance()->data['type'] == 'prod';
+        return self::instance()->data['production'];
     }
 
     public static function database(){
