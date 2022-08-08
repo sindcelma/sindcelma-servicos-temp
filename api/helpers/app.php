@@ -24,9 +24,7 @@ function database(){
     return Config::database();
 }
 
-function request($elements){
-    return new Request($elements);
-}
+
 
 function _is_in_production(){
     return Config::get("production");
