@@ -3,7 +3,7 @@
 echo $content;
 */
 
-$nome = "email_mkt_segunda_rodada.html";
+$nome = "email_mkt_2_reuniao_finalizada.html";
 $content = file_get_contents("../view/email_mkt/".$nome);
 $content = str_replace("{{url}}", url("", true), $content);
 //$content = str_replace("{{url}}", url(), $content);
